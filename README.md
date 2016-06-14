@@ -23,7 +23,7 @@ debugging/configuration/OS matrix, we'll only recommend the last one.
 #### Installing `Go` manually
 
 This is best explained on the official page:
-http://golang.org/doc/install
+https://golang.org/doc/install
 
 On linux-64b, it would perhaps look like:
 
@@ -89,7 +89,6 @@ Now that the `go` tool is correctly setup, let's try to fetch some
 code.
 For this part, you'll need the following tools installed to actually retrieve the code from the repositories:
 - `git`
-- `hg` (*a.k.a* `mercurial`)
 
 Without further ado:
 
