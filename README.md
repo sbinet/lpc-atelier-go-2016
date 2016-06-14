@@ -94,6 +94,7 @@ Without further ado:
 
 ```sh
 $ go get -u -v github.com/sbinet/lpc-atelier-go-2016/cmd/lpc-hello
+github.com/sbinet/lpc-atelier-go-2016 (download)
 ```
 
 `go get` downloaded (cloned, in `git` speak) the whole
