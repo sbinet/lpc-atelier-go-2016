@@ -1,0 +1,252 @@
+Introduction to Go
+Atelier Go@LPC, 2016-07-05
+
+Sébastien Binet
+CNRS/IN2P3/LPC
+binet@clermont.in2p3.fr
+
+* Background
+
+# In this tutorial I'll show you how to install and use the Go Programming Language.
+
+* What is Go?
+
+Go is a new, general-purpose programming language.
+
+- Compiled
+- Statically typed
+- Concurrent
+- Simple
+- Productive
+
+"Go is a wise, clean, insightful, fresh thinking approach to the greatest-hits subset of the well understood."
+- Michael T. Jones
+
+
+* History
+
+- Project starts at Google in 2007 (by Griesemer, Pike, Thompson)
+- Open source release in November 2009
+- More than 250 contributors join the project
+- Version 1.0 release in March 2012
+- Version 1.1 release in May 2013
+- Version 1.2 release in December 2013
+- Version 1.3 release in June 2014
+- Version 1.4 release in December 2014 
+- Version 1.5 release in August 2015
+- Version 1.6 release in February 2016
+
+* Getting started
+
+* Install Go
+
+.link http://golang.org/doc/install
+
+- Install from binary distributions or build from source
+- 32- and 64-bit x86 and ARM processors
+- Windows, Mac OS X, Linux, and FreeBSD
+- Other platforms may be supported by `gccgo`
+
+# Go is available in binary form for Windows, Mac OS X, Linux, and FreeBSD running under 32 and 64-bit x86 processor architectures. To install Go on these systems, download the appropriate file from golang.org and either open the package installer (Windows or OS X) or extract the archive to /usr/local/go (Linux and FreeBSD).  
+
+# If you use a different operating system or processor architecture, you may still be able to use Go by building it from source or using gccgo (an alternate Go compiler based on the GNU C Compiler). See the installation instructions on golang.org for how to do this.
+
+* Test your Go installation
+
+# Let's build and run a simple Go program to check that we have a valid Go install. Create a file named hello.go somewhere convenient and populate it with this Go source code:
+
+Put this code into `hello.go`:
+
+.play _code/hello-00.go
+
+# Now, from a command prompt, run `go run hello.go`. This will build your program, storing the executable binary in a temporary location, and run it. You should see the greeting printed to the console.
+
+Run the program:
+
+  $ go run hello.go
+  Hello CNRS/IN2P3/LPC
+
+
+* The go tool
+
+The `go` tool is the standard tool for building, testing, and installing Go programs.
+
+Compile and run `hello.go`:
+
+  $ go run hello.go
+
+Run `zip` tests:
+
+  $ go test archive/zip
+  ok  	archive/zip	19.557s
+
+Build and format the files in the current directory:
+
+  $ go build
+  $ gofmt -w .
+
+Fetch and install `websocket`:
+
+  $ go get golang.org/x/net/websocket
+
+* Workspaces
+
+The `go` tool derives build instructions from Go source code.
+
+There's no need to write and maintain build scripts.
+
+For this to work, some prescribed directory structure, known as a workspace, is required.
+
+  workspace/
+    bin # executable binaries
+    pkg # compiled object files
+    src # source code
+
+
+* Create a workspace
+
+Create your workspace now.
+
+  $ mkdir -p $HOME/atelier-go/work/src
+
+(The `bin` and `pkg` sub-directories will be created by the `go` tool.)
+
+Tell the `go` tool where your workspace is by setting the `GOPATH` environment variable:
+# You can do this on OS X, Linux, and FreeBSD by adding this line to the `$HOME/.profile` and re-starting any running shells:
+
+  export GOPATH=$HOME/atelier-go/work
+
+# See the installation instructions at golang.org for how to set `GOPATH` under Windows.
+
+You may also want to add the `bin` sub-directory of your workspace to your `PATH`:
+
+  export PATH=$PATH:$GOPATH/bin
+
+This lets you run your Go programs without specifying their full path.
+
+(You may want to put these `export` commands in the `.bash_profile` file in your home directory.)
+
+* Choose a namespace
+
+Choose a special place for your Go code.
+
+I use `"github.com/sbinet"`, the root of my GitHub account (useful with `go get`).
+
+For this tutorial, let us all use `"github.com/lpc"`
+
+# Once you have chosen a namespace, create the required paths inside the `src` directory of your workspace:
+
+  $ mkdir -p $GOPATH/src/github.com/lpc
+
+Create a `hello` directory in your namespace and copy `hello.go` there:
+  
+  $ mkdir $GOPATH/src/github.com/lpc/hello
+  $ cp hello.go $GOPATH/src/github.com/lpc/hello/main.go
+
+* Choose a namespace - II
+
+Now you can build and install the `hello` program with the `go` tool:
+
+  $ go install github.com/lpc/hello
+
+This builds an executable named `hello`, and installs it to the `bin` directory of your workspace.
+
+  $ $GOPATH/bin/hello
+  Hello CNRS/IN2P3/LPC
+
+* Go - first concepts
+
+* Hello world
+
+.play _code/hello-00.go
+
+- `package`
+- `func`
+- `println` builtin function
+
+What about variables ?
+
+* Go types
+
+- primitive types
+
+	int, uint, int8, uint8, ..., uint64, int8, ... int64
+	bool, string
+	float32, float64
+	complex64, complex128
+
+- structs
+
+	struct {
+		Name string
+		Age  int
+	}
+
+- arrays and slices
+
+	[3]string, []float64
+
+- maps
+
+	map[string]int
+
+* Kinds of types (continued)
+
+- pointers
+
+	*int, *Person
+
+- functions
+
+	func(int, int) int
+
+- channels
+
+	chan bool
+
+- interfaces
+
+	interface {
+		Start()
+		Stop()
+	}
+
+* Type declarations
+
+	type [name] [specification]
+
+`Person` is a `struct` type.
+
+	type Person struct {
+		name string
+		age  int
+	}
+
+`Celsius` is a `float64` type.
+
+	type Celsius float64
+
+* Function declarations
+
+	func [name] ([params]) [return value]
+	func [name] ([params]) ([return values])
+
+A sum function:
+
+	func sum(a int, b int) int {
+		return a + b
+	}
+
+A function with multiple return values:
+
+	func divMod(a, b int) (int, int) {
+		return a / b, a % b
+	}
+
+Made clearer by naming the return values:
+
+	func divMod(a, b int) (quo, rem int) {
+		return a / b, a % b
+	}
+
+
