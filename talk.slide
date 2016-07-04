@@ -657,8 +657,8 @@ A typical example is the `compress/gzip.NewReader` function which takes an `io.R
 
 .code _code/idents.go
 
-  $ cat $(find $GOROOT -name '*.go') | ./idents | sort | uniq -c | sort -nr | sed 10q
-  3.08s user 2.49s system 171% cpu 3.245 total
+  $ cat $(find $(go env GOROOT) -name '*.go') | ./idents | sort | uniq -c | sort -nr | sed 10q
+  4.76s user 3.66s system 134% cpu 6.27s total
 
 * A variation: Histogram of Go statements
 
@@ -709,12 +709,12 @@ Note: Histogram (map) iteration order is not specified.
     13.   1.34%   2833  *ast.RangeStmt
   [...]
     18.   0.16%    348  *ast.GoStmt
-  indexer  2.87s user 0.06s system 101% cpu 2.900 total
+  indexer  2.95s user 0.07s system 108% cpu 2.78s total
 
 compared to:
 
-  $ cat $(find $GOROOT -name '*.go') | ./idents | sort | uniq -c | sort -nr | sed 10q
-  3.08s user 2.49s system 171% cpu 3.245 total
+  $ cat $(find $(go env GOROOT) -name '*.go') | ./idents | sort | uniq -c | sort -nr | sed 10q
+  4.76s user 3.66s system 134% cpu 6.27s total
 
 * Sorting
 
