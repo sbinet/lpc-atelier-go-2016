@@ -831,6 +831,39 @@ Reducer:
 
 .play _code/cgo.go
 
+
+* cgo - II
+
+It is also possible to combine `Go` and `C` sources together inside a single package:
+
+  $> mkdir $GOPATH/src/github.com/lpc/my-cgo
+
+Inside this new package, put 3 files: `main.go`, `my-cgo-lib.h`, `my-cgo-lib.c`.
+
+`main.go:`
+.code _code/my-cgo-main.go
+
+* cgo - III
+
+`my-cgo-lib.h:`
+.code _code/my-cgo-lib.h
+
+`my-cgo-lib.c:`
+.code _code/my-cgo-lib.c
+
+* cgo - IV
+
+And build/install like so:
+
+  $> go get -v github.com/lpc/my-cgo
+  github.com/lpc/my-cgo
+  
+  $> my-cgo
+  Hello From C
+
+
+For more informations: [[https://golang.org/cmd/cgo/][cmd/cgo]]
+
 * Acknowledgements / resources
 
 Most of this tutorial has been extracted or adapted from:
