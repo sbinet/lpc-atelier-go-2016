@@ -892,12 +892,16 @@ Let's create a new `extra-01` program which will open a text file and count word
 
 * extra-01 (solution)
 
+(next slide)
+
+* extra-01 (solution)
+
 .code _code/extra-01.go /^func main/,/^}/ HLxxx
 
 
 * extra-01 - II
 
-Let's modify `extra-01` to display general statistics:
+Let's modify `extra-01` to display some general statistics:
 - number of lines
 - number of words
 - 5 most popular words
@@ -916,6 +920,10 @@ Let's modify `extra-01` to display general statistics:
 *Hint:* use a `map[string]int`
 *Hint:* `godoc` `sort` `Sort`
 *Hint:* `godoc` `sort` `Reverse`
+
+* extra-01 - II (solution)
+
+(next slides)
 
 * extra-01 - II (solution)
 
