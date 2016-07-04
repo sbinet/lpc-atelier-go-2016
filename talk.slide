@@ -172,7 +172,7 @@ This builds an executable named `hello`, and installs it to the `bin` directory 
 
 - primitive types
 
-	int, uint, int8, uint8, ..., uint64, int8, ... int64
+	int, uint, uint8, ..., uint64, int8, ... int64
 	bool, string
 	float32, float64
 	complex64, complex128
