@@ -424,9 +424,11 @@ Browsing documentation is performed with `godoc`.
 
 Also available from:
 
-.link http://golang.org/pkg
+.link https://golang.org/pkg
 
-.link http://golang.org/pkg/os
+.link https://golang.org/pkg/os
+
+.link https://godoc.org/os
 
 or locally:
 
