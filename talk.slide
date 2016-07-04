@@ -452,7 +452,7 @@ Modify `ex-01` to iterate over this slice and print each argument (except the ex
 
 (Make sure it still works when no argument is passed to the command)
 
-*Hint:* look for the `range` keyword on [[https://golang.org/doc/effective_go.html#for][Effective Go]].
+*Hint:* look for the `"range"` and `"for"` keywords on [[https://golang.org/doc/effective_go.html#for][Effective Go]].
 
 * ex-01 - II
 
@@ -466,6 +466,9 @@ Solution on the next slide...
 
 Let's create a new `ex-02` program taking integers as arguments from the command line and returning their sum:
 
+  ## build+install ex-02
+  $ go get github.com/lpc/ex-02
+  
   $ ex-02 1 2 3 4 100
   sum= 110
 
