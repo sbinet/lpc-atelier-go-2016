@@ -364,8 +364,14 @@ Run the code. Notice the error message.
 
 * ex-01: a program printing out its arguments
 
+Create `$GOPATH/src/github.com/lpc/ex-01/main.go` with the following content:
+
 .code _code/ex-01.go
 
+  ## build and install ex-01
+  $ go get github.com/lpc/ex-01
+  
+  ## run ex-01:
   $ ex-01 foo bar baz 01234
   args: [ex-01 foo bar baz 01234]
 
