@@ -201,6 +201,7 @@ This builds an executable named `hello`, and installs it to the `bin` directory 
 - functions
 
 	func(int, int) int
+	func(int, float64) (float64, error)
 
 - channels
 
