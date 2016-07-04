@@ -595,6 +595,14 @@ and modify the `rot13` function until the test passes.
 
 - `go` `test` builds and runs the tests in the local directory.
 
+* ex-04 - rot13 (solution)
+
+(next slide)
+
+* ex-04 - rot13 (solution)
+
+.code _code/rot13.go /STARTROT13-FUNC OMIT/,/ENDROT13-FUNC OMIT/
+
 
 * Interlude: Interfaces
 

@@ -2,6 +2,8 @@ package rot13
 
 import "io"
 
+// STARTROT13-FUNC OMIT
+
 func rot13(b byte) byte {
 	var a, z byte
 	switch {
@@ -14,6 +16,8 @@ func rot13(b byte) byte {
 	}
 	return (b-a+13)%(z-a+1) + a
 }
+
+// ENDROT13-FUNC OMIT
 
 // STARTROT13 OMIT
 
