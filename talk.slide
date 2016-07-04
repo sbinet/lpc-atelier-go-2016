@@ -905,12 +905,13 @@ Most of this tutorial has been extracted or adapted from:
 
 Let's create a new `extra-01` program which will open a text file and count words in it:
 
-  $ extra-01 github.com/sbinet/lpc-atelier-go-2016/testdata/lorem-ipsum.txt
+  $ extra-01 $GOPATH/src/github.com/sbinet/lpc-atelier-go-2016/testdata/lorem-ipsum.txt
   69
 
 *Hint:* `godoc` `os` `Open`
 *Hint:* `godoc` `io` `EOF`
-*Hint:* `godoc` `bufio`
+*Hint:* `godoc` `bufio` `Scanner`
+*Hint:* `godoc` `strings` `Split`
 
 *Hint:* if it returns `70` you are not correctly handling empty strings.
 
