@@ -156,7 +156,11 @@ This builds an executable named `hello`, and installs it to the `bin` directory 
 
 * Go - first concepts
 
-* Hello world
+* Hello world 2.0
+
+.play _code/hello-web.go
+
+* Hello world 1.0
 
 .play _code/hello-00.go
 
