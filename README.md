@@ -4,6 +4,8 @@ lpc-atelier-go-2016
 `lpc-atelier-go-2016` is a simple repository holding sources for the `Go`
 hands-on session of the Atelier `Go`.
 
+The slides are [here](http://talks.godoc.org/github.com/sbinet/lpc-atelier-go-2016/talk.slide).
+
 ## Bootstrapping the work environment
 
 ### Installing the `Go` toolchain
