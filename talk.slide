@@ -938,3 +938,6 @@ Let's modify `extra-01` to display some general statistics:
 
 .code _code/extra-01-stats.go /STARTITEM OMIT/,/ENDITEM OMIT/ HLxxx
 
+* Network programming with Go
+
+See [[https://github.com/sbinet/whispering-gophers]]
