@@ -823,6 +823,14 @@ Reducer:
 .play _code/histop.go /main START/,/main END/
 
 
+* Interlude: Calling C
+
+* cgo
+
+[[https://golang.org/][Go]] has a convenient way to call `C`:
+
+.play _code/cgo.go
+
 * Acknowledgements / resources
 
 Most of this tutorial has been extracted or adapted from:
